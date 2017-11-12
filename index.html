@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/style.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo-container">
+                    <div class="logo-img">
+                        <img src="images/logo.png" alt="logo">
+                    </div>
+                    <div class="logo-title">TestsitE</div>
+                </div>
+                <ul>
+                    <li class="active"><a href="">Register now</a></li>
+                    <li><a href="">What it is</a></li>
+                    <li><a href="">How it works</a></li>
+                    <li><a href="">Issues</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="search-wrapper">
+            <div class="container">
+                <section>
+                    <form action="/">
+                        <input type="text" placeholder="Search">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <aside>
+                <div class="accordion">
+                    <div class="accordion-button">
+                        <div class="title">Type Of Module #1 <i class="fa fa-caret-up"></i></div>
+                    </div>
+                    <div class="accordion-container">
+                        <ul>
+                            <li><a href="/">Slide pop up</a></li>
+                            <li><a href="/">Go to adjacent</a></li>
+                            <li><a href="/">Open PDF</a></li>
+                            <li><a href="/">Go to without animation</a></li>
+                            <li><a href="/">Go to with animation</a></li>
+                            <li><a href="/">Send e-mail</a></li>
+                        </ul>
+                    </div>
+                    <div class="accordion-button">
+                        <div class="title">Type Of Module #2 <i class="fa fa-caret-up"></i></div>
+                    </div>
+                    <div class="accordion-container">
+                        <ul>
+                            <li><a href="/">Slide pop up</a></li>
+                            <li><a href="/">Go to adjacent</a></li>
+                            <li><a href="/">Open PDF</a></li>
+                            <li><a href="/">Go to without animation</a></li>
+                            <li><a href="/">Go to with animation</a></li>
+                            <li><a href="/">Send e-mail</a></li>
+                        </ul>
+                    </div>
+                    <div class="accordion-button">
+                        <div class="title">Type Of Module #3 <i class="fa fa-caret-up"></i></div>
+                    </div>
+                    <div class="accordion-container">
+                        <ul>
+                            <li><a href="/">Slide pop up</a></li>
+                            <li><a href="/">Go to adjacent</a></li>
+                            <li><a href="/">Open PDF</a></li>
+                            <li><a href="/">Go to without animation</a></li>
+                            <li><a href="/">Go to with animation</a></li>
+                            <li><a href="/">Send e-mail</a></li>
+                        </ul>
+                    </div>
+                    <div class="accordion-button">
+                        <div class="title">Type Of Module #4 <i class="fa fa-caret-up"></i></div>
+                    </div>
+                    <div class="accordion-container">
+                        <ul>
+                            <li><a href="/">Slide pop up</a></li>
+                            <li><a href="/">Go to adjacent</a></li>
+                            <li><a href="/">Open PDF</a></li>
+                            <li><a href="/">Go to without animation</a></li>
+                            <li><a href="/">Go to with animation</a></li>
+                            <li><a href="/">Send e-mail</a></li>
+                        </ul>
+                    </div>
+                    <div class="accordion-button">
+                        <div class="title">Type Of Module #5 <i class="fa fa-caret-up"></i></div>
+                    </div>
+                    <div class="accordion-container">
+                        <ul>
+                            <li><a href="/">Slide pop up</a></li>
+                            <li><a href="/">Go to adjacent</a></li>
+                            <li><a href="/">Open PDF</a></li>
+                            <li><a href="/">Go to without animation</a></li>
+                            <li><a href="/">Go to with animation</a></li>
+                            <li><a href="/">Send e-mail</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <article>
+                <h1>Go to adjacent</h1>
+                <p>Component for drawing in the presentation.</p>
+                <p>Consists of the button to enable / disable drawing mode and canvas - drawing area.</p>
+                <h3>Install</h3>
+                <p><code> bower install --save test/paint-tool</code></p>
+                <h3>Link</h3>
+                <p><code> < link rv-component="components/paint-tool" > </code></p>
+                <p>Styles:</p>
+                <p><code> < link rel="stylesheet" href="compostyle.css" > </code></p>
+                <p>Use</p>
+                <p>1. Need to add binder to draw on any element:</p>
+                <p><code> < button rv-paint > Paint < /button > </code></p>
+                <p>2. When drawing mode is enabled, on this element automatically add class `active`.</p>
+                <h3>Examples</h3>
+                <p>Besides you can change paint-tool default values. To do this, add an object `paint` in app.json.</p>
+                <ul style="list-style: square">
+                    <li>`lineWidth` *(number)* - painting line width in px</li>
+                    <li>`color` *(string)* - painting line color</li>
+                    <li>`opacity` *(number [0-1])* - painting line transparency</li>
+                </ul>
+                <h4>Default values</h4>
+                <p><code>"lineWidth": 5,<br>
+                    "color": 'red',<br>
+                    "opacity": 0.5
+                    </code>
+                </p>
+                <h4>Example (app.json)</h4>
+                <pre>
+"paint": {
+    "lineWidth": 8,
+    "color": "yellow",
+    "opacity": 0.6
+    }
+                </pre>
+            </article>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script>
+        window.onload = function () { //DOM ready
+            window.accordion = window.accordion || {};
+            window.accordion.own = function () {
+                var abtn = document.getElementsByClassName("accordion-button");
+                var i;
+
+                for (i = 0; i < abtn.length; i++) {
+                    abtn[i].onclick = function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.maxHeight){
+                            panel.style.maxHeight = null;
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                        }
+                    }
+                }
+            };
+            window.accordion.own();
+        };
+    </script>
+</body>
+</html>

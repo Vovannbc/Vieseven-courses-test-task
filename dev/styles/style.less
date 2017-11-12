@@ -1,0 +1,160 @@
+@colorFirst : #960869;
+@colorSecond : #fecd33;
+@colorBody : #000;
+
+body {
+  font-size: 18px;
+  background-color: #ffffff;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container  {
+  max-width: 940px;
+  margin: 0 auto;
+}
+aside {
+  float: left;
+  width: 300px;
+}
+
+section,
+article{
+  max-width: 540px;
+  margin-left: auto;
+}
+
+
+header {
+  nav {
+    background: url('/images/nav-bg.png') top no-repeat;
+    background-size: cover;
+    &>.container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px 0;
+    }
+    ul {
+      list-style: none;
+      li {
+        display: inline-block;
+        margin-left: 9px;
+        a {
+          color: #ffffff;
+        }
+        &.active > a,
+        &:hover > a {
+          color: @colorSecond;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .logo-container {
+    width: 8.3%;
+    .logo-title {
+      color: #ffffff;
+    }
+  }
+  .search-wrapper {
+    background-color: @colorFirst;
+    padding: 15px 0;
+    form {
+      width: 100%;
+      display: inline-flex;
+      align-items: stretch;
+      input,
+      button {
+        vertical-align: bottom;
+      }
+      input,
+      input::placeholder{
+        font-size: 24px;
+      }
+      input {
+        padding: 14px;
+        border: none;
+        width: calc(~"100% - 80px");
+      }
+      button[type='submit'] {
+        padding: 14px;
+        background-color: @colorSecond;
+        width: 80px;
+        border: none;
+        outline: none;
+        &:focus {
+          border: none;
+          outline: none;
+        }
+        i.fa {
+          font-size: 30px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+main {
+  padding-top: 65px;
+  padding-bottom: 65px;
+
+}
+
+.accordion {
+  width: 100%;
+  position: relative;
+  .accordion-button {
+    background: linear-gradient(to top, #feaa10, @colorSecond );
+    cursor: pointer;
+    max-width: 100%;
+    text-align: left;
+    transition: 0.4s;
+    padding: 10px;
+    border-bottom: 2px solid white;
+    i.fa {
+      position: absolute;
+      right: 10px;
+    }
+    &.active {
+      i.fa {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .accordion-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        padding: 10px;
+        a {
+          text-decoration: none;
+          color: @colorBody;
+          font-weight: 400;
+          &:hover {
+            color: @colorFirst;
+          }
+        }
+        &:nth-child(odd) {
+          background-color: #f6f6f6;
+        }
+      }
+    }
+  }
+}
