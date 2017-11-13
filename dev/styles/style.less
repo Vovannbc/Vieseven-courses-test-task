@@ -15,7 +15,6 @@ img {
 }
 
 aside {
-  float: left;
   width: 300px;
 }
 
@@ -37,6 +36,12 @@ pre{
   padding: 10px 15px;
   background-color: #FFF1FA;
 }
+
+address {
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.667;
+}
 nav {
   display: flex;
   flex-direction: row;
@@ -46,9 +51,10 @@ nav {
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     li {
       display: inline-block;
-      padding: 0 9px;
+      padding: 15px 9px;
       a {
         color: #ffffff;
       }
@@ -66,32 +72,30 @@ nav {
   max-width: 940px;
   margin: 0 auto;
 }
+.row {
+  margin-right: 15px;
+  margin-left: 15px;
+}
 .container:before,
 .container:after {
   content: " ";
-  display: table; }
-.container:after {
-  clear: both; }
-.col {
-  float: left;
+  display: table;
 }
-@media (min-width: 340px) {
-  .col.s4 {
-    width: 33.33333%;
-  }
+.container:after {
+  clear: both;
 }
 
+.logo-container {
+  width: 78px;
+  .logo-title {
+    color: #ffffff;
+    text-align: center;
+  }
+}
 
 
 header {
   background: url('/images/nav-bg.png') top no-repeat;
-  background-size: cover;
-  .logo-container {
-    width: 8.3%;
-    .logo-title {
-      color: #ffffff;
-    }
-  }
   .search-wrapper {
     background-color: @colorFirst;
     padding: 15px 0;
@@ -134,7 +138,7 @@ header {
 main {
   padding-top: 65px;
   padding-bottom: 65px;
-
+  display: flex;
 }
 
 .accordion {
@@ -193,6 +197,7 @@ main {
   a.to-top {
     float: left;
     color: @colorSecond;
+    margin: 15px 9px;
   }
 }
 
@@ -204,15 +209,22 @@ ul.socials {
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
+  flex-wrap: wrap;
   li {
+    margin: 5px auto;
     &:last-child i.fa:before {
       content: '●●';
     }
   }
   a {
-    display: block;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
     background-color: #000;
-    padding: 20px;
+    width:62px;
+    height: 62px;
+    text-decoration: none;
     i.fa {
       color: #fff;
     }
@@ -226,9 +238,73 @@ ul.socials {
 footer {
   background-color: #950067;
   color: #ffffff;
-  padding: 20px 0;
+  padding: 10px 0;
   .title {
     color: @colorSecond;
+    margin-top: 20px;
   }
 }
 
+.privacy-policy {
+  color: #000000;
+  line-height: 1.333;
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 341px) {
+  .col {
+    float: left;
+  }
+  .col.s4 {
+    width: 33.33333%;
+  }
+}
+
+button.accordion-mobile-toggle {
+  display: none;
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  width: 10px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 60px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid @colorSecond;
+  border-bottom: 10px solid transparent;
+  top:calc(~"50% - 30px");
+  background-color: transparent;
+  i.fa {
+    position: absolute;
+    right: 0;
+    top: calc(~"50% - 6px");
+  }
+}
+
+
+@media screen and (max-width: 340px) {
+  .accordion {
+    position: fixed;
+    left: calc(~"-100% + 3px");
+    top: 30px;
+    transition: all 1s;
+    button.accordion-mobile-toggle {
+      display: block;
+    }
+    &.show {
+      left: 0;
+    }
+  }
+  nav,
+  nav>ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer {
+    .logo-container {
+      margin: 0 auto;
+    }
+  }
+}
