@@ -14,10 +14,6 @@ img {
   max-width: 100%;
 }
 
-.container  {
-  max-width: 940px;
-  margin: 0 auto;
-}
 aside {
   float: left;
   width: 300px;
@@ -29,34 +25,67 @@ article{
   margin-left: auto;
 }
 
+a.disabled {
+  cursor: default;
+  text-decoration: none;
+  color: #3C3C3C;
+}
 
-header {
-  nav {
-    background: url('/images/nav-bg.png') top no-repeat;
-    background-size: cover;
-    &>.container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 15px 0;
-    }
-    ul {
-      list-style: none;
-      li {
-        display: inline-block;
-        margin-left: 9px;
-        a {
-          color: #ffffff;
-        }
-        &.active > a,
-        &:hover > a {
-          color: @colorSecond;
-          font-weight: bold;
-          text-decoration: none;
-        }
+code,
+pre{
+  display: block;
+  padding: 10px 15px;
+  background-color: #FFF1FA;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      display: inline-block;
+      padding: 0 9px;
+      a {
+        color: #ffffff;
+      }
+      &.active > a,
+      &:hover > a:not(.disabled) {
+        color: @colorSecond;
+        font-weight: bold;
+        text-decoration: none;
       }
     }
   }
+}
+
+.container  {
+  max-width: 940px;
+  margin: 0 auto;
+}
+.container:before,
+.container:after {
+  content: " ";
+  display: table; }
+.container:after {
+  clear: both; }
+.col {
+  float: left;
+}
+@media (min-width: 340px) {
+  .col.s4 {
+    width: 33.33333%;
+  }
+}
+
+
+
+header {
+  background: url('/images/nav-bg.png') top no-repeat;
+  background-size: cover;
   .logo-container {
     width: 8.3%;
     .logo-title {
@@ -158,3 +187,48 @@ main {
     }
   }
 }
+
+.sitemap {
+  background-color: #000000;
+  a.to-top {
+    float: left;
+    color: @colorSecond;
+  }
+}
+
+ul.socials {
+  margin: 10px auto;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  li {
+    &:last-child i.fa:before {
+      content: '●●';
+    }
+  }
+  a {
+    display: block;
+    background-color: #000;
+    padding: 20px;
+    i.fa {
+      color: #fff;
+    }
+    &:hover {
+      background-color: @colorSecond;
+    }
+  }
+
+}
+
+footer {
+  background-color: #950067;
+  color: #ffffff;
+  padding: 20px 0;
+  .title {
+    color: @colorSecond;
+  }
+}
+
