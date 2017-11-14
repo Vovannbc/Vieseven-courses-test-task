@@ -16,32 +16,15 @@ window.onload = function () { //DOM ready
             }
         }
     };
-    window.Own.SameBlocks = function (blocks, minScreenWidth) {
-        var swidth = screen.width;
-        if (swidth > minScreenWidth) {
-            var maxHeight = 0,
-                blocks = document.querySelectorAll(blocks);
-
-            for (var i = 0; i < blocks.length; i++) {
-                blocks[i].offsetHeight > maxHeight ? maxHeight = blocks[i].offsetHeight : false;
-            }
-            blocks.forEach(function (i) {
-                i.style.height = maxHeight;
-            });
-            console.log('blocks aligned')
-        }
+    window.Own.show = function (btn, target, toggleClass) {
+        toggleClass = toggleClass || 'show';
+        document.getElementsByClassName(btn)[0].onclick = function () {
+            document.getElementsByClassName(target)[0].classList.toggle(toggleClass);
+        };
     };
-
-
 
     window.Own.accordion();
-    window.Own.SameBlocks('footer .col', 340);
-
-    var btn = document.getElementsByClassName('.accordion-mobile-toggle');
-    var accordion = document.querySelector('.accordion');
-    btn.onclick = function () {
-        console.log('click');
-        accordion.classList.toggle('show');
-    };
+    window.Own.show('accordion-mobile-toggle', 'accordion');
+    window.Own.show('dropdown-btn', 'menu', 'dropdown');
 };
 
